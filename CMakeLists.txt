@@ -22,5 +22,14 @@ set(TASK_SOURCES
 foreach(src ${TASK_SOURCES})
     get_filename_component(exe ${src} NAME_WE)
     add_executable(${exe} ${src})
+    target_include_directories(${exe} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 endforeach()
 
+enable_testing()
+find_package(GTest REQUIRED)
+include(GoogleTest)
+
+add_executable(03_07_test 03_07_test.cpp)
+target_link_libraries(03_07_test PRIVATE GTest::gtest_main)
+target_include_directories(03_07_test PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+gtest_discover_tests(03_07_test)
