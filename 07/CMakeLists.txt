@@ -14,12 +14,14 @@ set(TASK_SOURCES
     07_02_bad_variant_access.cpp
     07_02_length_error.cpp
     07_02_out_of_range.cpp
+    07_05_sort.cpp
 )
-
+find_package(benchmark REQUIRED)
 foreach(src ${TASK_SOURCES})
     get_filename_component(exe ${src} NAME_WE)
     add_executable(${exe} ${src})
     target_include_directories(${exe} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+    target_link_libraries(${exe} PRIVATE benchmark::benchmark)
 endforeach()
 
 find_package(GTest REQUIRED)
@@ -29,6 +31,7 @@ enable_testing()
 
 set(TEST_SOURCES
   07_02_test.cpp
+  07_04.cpp
 )
 foreach(src ${TEST_SOURCES})
     get_filename_component(exe ${src} NAME_WE)
