@@ -1,10 +1,10 @@
-# pragma once
+#pragma once
 
-#include <utility>
-#include <initializer_list>
 #include <algorithm>
 #include <cassert>
+#include <initializer_list>
 #include <iterator>
+#include <utility>
 
 namespace yacc {
 template <typename T> class Vector final {
@@ -33,7 +33,7 @@ public:
   ~Vector() { delete[] m_array; }
 
   Vector &operator=(const Vector &other) {
-    Vector tmp (other);
+    Vector tmp(other);
     swap(tmp);
     return *this;
   }
@@ -43,12 +43,12 @@ public:
     return *this;
   }
 
-  T &operator[](std::size_t idx) &{
+  T &operator[](std::size_t idx) & {
     assert(idx < size());
     return *(m_array + idx);
   }
 
-  T &operator[](std::size_t idx) const &{
+  T &operator[](std::size_t idx) const & {
     assert(idx < size());
     return *(m_array + idx);
   }
@@ -71,12 +71,12 @@ public:
     }
     m_array[m_size++] = value;
   }
-  using iterator = T*;
-  using const_iterator = T*;
-  iterator begin() & {return m_array; }
-  const_iterator begin() const & {return m_array; }
-  iterator end() & {return m_array + m_size; }
-  const_iterator end() const & {return m_array + m_size; }
+  using iterator = T *;
+  using const_iterator = T *;
+  iterator begin() & { return m_array; }
+  const_iterator begin() const & { return m_array; }
+  iterator end() & { return m_array + m_size; }
+  const_iterator end() const & { return m_array + m_size; }
 
 private:
   T *m_array = nullptr;

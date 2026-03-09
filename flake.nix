@@ -33,7 +33,7 @@
               cmake
               ninja
             ];
-            buildInputs = with pkgs; [gtest];
+            buildInputs = with pkgs; [ gtest ];
           };
         };
     };
