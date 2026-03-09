@@ -10,8 +10,8 @@ TYPED_TEST_SUITE(RationalWithMixinTest, IntegralTypes);
 
 TYPED_TEST(RationalWithMixinTest, PlusEqual) {
   // Assign
-  dts::RationalWithMixins<TypeParam> lhs{5, 2};
-  const dts::RationalWithMixins<TypeParam> rhs{7, 6};
+  yacc::RationalWithMixins<TypeParam> lhs{5, 2};
+  const yacc::RationalWithMixins<TypeParam> rhs{7, 6};
 
   // Act
   lhs += rhs;
@@ -24,8 +24,8 @@ TYPED_TEST(RationalWithMixinTest, PlusEqual) {
 
 TYPED_TEST(RationalWithMixinTest, Plus) {
   // Assign
-  const dts::RationalWithMixins<TypeParam> lhs{5, 2};
-  const dts::RationalWithMixins<TypeParam> rhs{7, 6};
+  const yacc::RationalWithMixins<TypeParam> lhs{5, 2};
+  const yacc::RationalWithMixins<TypeParam> rhs{7, 6};
 
   // Act
   const auto sum = lhs + rhs;
@@ -38,7 +38,7 @@ TYPED_TEST(RationalWithMixinTest, Plus) {
 
 TYPED_TEST(RationalWithMixinTest, PreIncrement) {
   // Assign
-  dts::RationalWithMixins<TypeParam> r{5, 2};
+  yacc::RationalWithMixins<TypeParam> r{5, 2};
 
   // Act
   ++r;
@@ -51,7 +51,7 @@ TYPED_TEST(RationalWithMixinTest, PreIncrement) {
 
 TYPED_TEST(RationalWithMixinTest, PostIncrement) {
   // Assign
-  dts::RationalWithMixins<TypeParam> r{5, 2};
+  yacc::RationalWithMixins<TypeParam> r{5, 2};
 
   // Act
   const auto old = r++;
@@ -68,8 +68,8 @@ TYPED_TEST(RationalWithMixinTest, PostIncrement) {
 
 TYPED_TEST(RationalWithMixinTest, MinusEqual) {
   // Assign
-  dts::RationalWithMixins<TypeParam> lhs{5, 2};
-  const dts::RationalWithMixins<TypeParam> rhs{7, 6};
+  yacc::RationalWithMixins<TypeParam> lhs{5, 2};
+  const yacc::RationalWithMixins<TypeParam> rhs{7, 6};
 
   // Act
   lhs -= rhs;
@@ -82,8 +82,8 @@ TYPED_TEST(RationalWithMixinTest, MinusEqual) {
 
 TYPED_TEST(RationalWithMixinTest, Minus) {
   // Assign
-  const dts::RationalWithMixins<TypeParam> lhs{5, 2};
-  const dts::RationalWithMixins<TypeParam> rhs{7, 6};
+  const yacc::RationalWithMixins<TypeParam> lhs{5, 2};
+  const yacc::RationalWithMixins<TypeParam> rhs{7, 6};
 
   // Act
   const auto sum = lhs - rhs;
@@ -96,7 +96,7 @@ TYPED_TEST(RationalWithMixinTest, Minus) {
 
 TYPED_TEST(RationalWithMixinTest, PreDecrement) {
   // Assign
-  dts::RationalWithMixins<TypeParam> r{5, 2};
+  yacc::RationalWithMixins<TypeParam> r{5, 2};
 
   // Act
   --r;
@@ -109,7 +109,7 @@ TYPED_TEST(RationalWithMixinTest, PreDecrement) {
 
 TYPED_TEST(RationalWithMixinTest, PostDecrement) {
   // Assign
-  dts::RationalWithMixins<TypeParam> r{5, 2};
+  yacc::RationalWithMixins<TypeParam> r{5, 2};
 
   // Act
   const auto old = r--;
@@ -126,8 +126,8 @@ TYPED_TEST(RationalWithMixinTest, PostDecrement) {
 
 TYPED_TEST(RationalWithMixinTest, MultiplyEqual) {
   // Assign
-  dts::RationalWithMixins<TypeParam> lhs{2, 3};
-  const dts::RationalWithMixins<TypeParam> rhs{3, 2};
+  yacc::RationalWithMixins<TypeParam> lhs{2, 3};
+  const yacc::RationalWithMixins<TypeParam> rhs{3, 2};
 
   // Act
   lhs *= rhs;
@@ -140,8 +140,8 @@ TYPED_TEST(RationalWithMixinTest, MultiplyEqual) {
 
 TYPED_TEST(RationalWithMixinTest, Multiply) {
   // Assign
-  const dts::RationalWithMixins<TypeParam> lhs{2, 3};
-  const dts::RationalWithMixins<TypeParam> rhs{3, 2};
+  const yacc::RationalWithMixins<TypeParam> lhs{2, 3};
+  const yacc::RationalWithMixins<TypeParam> rhs{3, 2};
 
   // Act
   const auto prod = lhs * rhs;
@@ -154,8 +154,8 @@ TYPED_TEST(RationalWithMixinTest, Multiply) {
 
 TYPED_TEST(RationalWithMixinTest, DivideEqual) {
   // Assign
-  dts::RationalWithMixins<TypeParam> lhs{5, 2};
-  const dts::RationalWithMixins<TypeParam> rhs{3, 4};
+  yacc::RationalWithMixins<TypeParam> lhs{5, 2};
+  const yacc::RationalWithMixins<TypeParam> rhs{3, 4};
 
   // Act
   lhs /= rhs;
@@ -168,8 +168,8 @@ TYPED_TEST(RationalWithMixinTest, DivideEqual) {
 
 TYPED_TEST(RationalWithMixinTest, Divide) {
   // Assign
-  const dts::RationalWithMixins<TypeParam> lhs{5, 2};
-  const dts::RationalWithMixins<TypeParam> rhs{3, 4};
+  const yacc::RationalWithMixins<TypeParam> lhs{5, 2};
+  const yacc::RationalWithMixins<TypeParam> rhs{3, 4};
 
   // Act
   const auto quot = lhs / rhs;

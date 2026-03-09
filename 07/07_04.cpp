@@ -10,7 +10,7 @@ TEST(QuickSort, EmptySequence) {
   std::deque<int> d;
 
   // Act
-  dts::sort(d.begin(), d.end());
+  yacc::sort(d.begin(), d.end());
 
   // Assert
   EXPECT_TRUE(std::ranges::is_sorted(d)) << std::format("{}", d);
@@ -21,7 +21,7 @@ TEST(QuickSort, OneElement) {
   std::deque<int> d{42};
 
   // Act
-  dts::sort(d.begin(), d.end());
+  yacc::sort(d.begin(), d.end());
 
   // Assert
   EXPECT_TRUE(std::ranges::is_sorted(d)) << std::format("{}", d);
@@ -32,7 +32,7 @@ TEST(QuickSort, TwoElementsSorted) {
   std::deque<int> d{1, 2};
 
   // Act
-  dts::sort(d.begin(), d.end());
+  yacc::sort(d.begin(), d.end());
 
   // Assert
   EXPECT_TRUE(std::ranges::is_sorted(d)) << std::format("{}", d);
@@ -43,7 +43,7 @@ TEST(QuickSort, TwoElementsNotSorted) {
   std::deque<int> d{2, 1};
 
   // Act
-  dts::sort(d.begin(), d.end());
+  yacc::sort(d.begin(), d.end());
 
   // Assert
   EXPECT_TRUE(std::ranges::is_sorted(d)) << std::format("{}", d);
@@ -54,7 +54,7 @@ TEST(QuickSort, TwoElementsEqual) {
   std::deque<int> d{1, 1};
 
   // Act
-  dts::sort(d.begin(), d.end());
+  yacc::sort(d.begin(), d.end());
 
   // Assert
   EXPECT_TRUE(std::ranges::is_sorted(d)) << std::format("{}", d);
@@ -65,7 +65,7 @@ TEST(QuickSort, UnsortedSequenceLessThanThreshold) {
   std::deque<int> d{-5, 1, 12, 2, 8, 9, 5, 8, 11, -12, 37, 42, 1, 35};
 
   // Act
-  dts::sort(d.begin(), d.end());
+  yacc::sort(d.begin(), d.end());
 
   // Assert
   EXPECT_TRUE(std::ranges::is_sorted(d)) << std::format("{}", d);
@@ -77,7 +77,7 @@ TEST(QuickSort, UnsortedSequenceLessThanThresholdWithOtherComparator) {
   std::greater cmp;
 
   // Act
-  dts::sort(d.begin(), d.end(), cmp);
+  yacc::sort(d.begin(), d.end(), cmp);
 
   // Assert
   EXPECT_TRUE(std::ranges::is_sorted(d, cmp)) << std::format("{}", d);
@@ -89,7 +89,7 @@ TEST(QuickSort, UnsortedSequence) {
                     1,  35, 104, 213, 25, 84, -72, 0, 29, 31,  1058};
 
   // Act
-  dts::sort(d.begin(), d.end());
+  yacc::sort(d.begin(), d.end());
 
   // Assert
   EXPECT_TRUE(std::ranges::is_sorted(d)) << std::format("{}", d);
@@ -102,7 +102,7 @@ TEST(QuickSort, UnsortedSequenceWithOtherComparator) {
   std::greater cmp;
 
   // Act
-  dts::sort(d.begin(), d.end(), cmp);
+  yacc::sort(d.begin(), d.end(), cmp);
 
   // Assert
   EXPECT_TRUE(std::ranges::is_sorted(d, cmp)) << std::format("{}", d);
@@ -117,7 +117,7 @@ TEST(QuickSort, Strings) {
       "et",          "dolore",     "magna",      "aliqua"};
 
   // Act
-  dts::sort(strings.begin(), strings.end());
+  yacc::sort(strings.begin(), strings.end());
 
   // Assert
   EXPECT_TRUE(std::ranges::is_sorted(strings)) << std::format("{}", strings);

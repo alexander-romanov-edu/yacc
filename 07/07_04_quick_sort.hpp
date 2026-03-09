@@ -3,7 +3,7 @@
 #include <cstddef>
 #include <iterator>
 
-namespace dts {
+namespace yacc {
 
 namespace detail {
 
@@ -42,7 +42,7 @@ template <std::random_access_iterator Iter, typename Compare>
 Iter partition(Iter First, Iter Last, Compare Comp) {
   assert(First != Last);
 
-  auto PivotIt = dts::detail::pivot(First, Last, Comp);
+  auto PivotIt = yacc::detail::pivot(First, Last, Comp);
   --Last;
   auto I = First;
   for (auto It = First; It != Last; ++It) {
@@ -65,11 +65,11 @@ void sort(It First, It Last, Compare Comp) {
 
   constexpr std::ptrdiff_t KQuickSortThreshold = 16;
   if (std::distance(First, Last) >= KQuickSortThreshold) {
-    auto Q = dts::detail::partition(First, Last, Comp);
-    dts::sort(First, Q, Comp);
-    dts::sort(std::next(Q), Last, Comp);
+    auto Q = yacc::detail::partition(First, Last, Comp);
+    yacc::sort(First, Q, Comp);
+    yacc::sort(std::next(Q), Last, Comp);
   } else {
-    dts::detail::insertionSort(First, Last, Comp);
+    yacc::detail::insertionSort(First, Last, Comp);
   }
 }
 
@@ -77,4 +77,4 @@ template <std::random_access_iterator It> void sort(It First, It Last) {
   sort(First, Last, std::less{});
 }
 
-} // namespace dts
+} // namespace yacc

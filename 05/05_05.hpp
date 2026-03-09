@@ -8,7 +8,7 @@
 #include <stdexcept>
 #include <type_traits>
 
-namespace dts {
+namespace yacc {
 namespace detail {
 
 template <typename T> struct empty_base {};
@@ -167,4 +167,4 @@ private:
   T num_;
   T den_;
 };
-} // namespace dts
+} // namespace yacc

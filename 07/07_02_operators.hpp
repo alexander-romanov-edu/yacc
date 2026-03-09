@@ -8,7 +8,7 @@
 #include <stdexcept>
 #include <type_traits>
 
-namespace dts {
+namespace yacc {
 
 class Exception : public std::exception {
   const char *what() const noexcept override {
@@ -81,7 +81,7 @@ public:
   constexpr RationalWithExceptions(T num = 0, T den = 1)
       : num_(num), den_(den) {
     if (den == 0) {
-      throw dts::Exception{};
+      throw yacc::Exception{};
     }
     reduce();
   }
@@ -181,4 +181,4 @@ private:
   T den_;
 };
 
-} // namespace dts
+} // namespace yacc

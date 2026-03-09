@@ -10,15 +10,15 @@ using IntegralTypes = ::testing::Types<short, int, long, long long>;
 TYPED_TEST_SUITE(RationalWithExceptionsTest, IntegralTypes);
 
 TYPED_TEST(RationalWithExceptionsTest, ZeroDenominatorInCtor) {
-  EXPECT_THROW(dts::RationalWithExceptions<TypeParam>(1, 0), dts::Exception);
+  EXPECT_THROW(yacc::RationalWithExceptions<TypeParam>(1, 0), yacc::Exception);
 }
 
 TYPED_TEST(RationalWithExceptionsTest, ZeroDenominatorInDeserialization) {
   // Assign
   std::stringstream ss;
   ss << "1/0";
-  dts::RationalWithExceptions<TypeParam> r;
+  yacc::RationalWithExceptions<TypeParam> r;
 
   // Act & Assert
-  EXPECT_THROW(ss >> r, dts::Exception);
+  EXPECT_THROW(ss >> r, yacc::Exception);
 }

@@ -3,7 +3,7 @@
 #include <cassert>
 #include <cstddef>
 #include <iterator>
-namespace dts {
+namespace yacc {
 
 namespace detail {
 
@@ -78,4 +78,4 @@ void sort(Iter First, Iter Last, std::size_t Threshold) {
   sort(First, Last, Threshold, std::less{});
 }
 
-} // namespace dts
+} // namespace yacc

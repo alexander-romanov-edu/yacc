@@ -45,7 +45,7 @@ BENCHMARK_F(SortBenchmark, run)(benchmark::State &state) {
   std::vector<int> v(kSize);
   for (auto _ : state) {
     std::ranges::copy(kRange, v.begin());
-    dts::sort(v.begin(), v.end(), threshold());
+    yacc::sort(v.begin(), v.end(), threshold());
   }
 }
 
